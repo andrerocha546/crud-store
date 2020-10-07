@@ -1,24 +1,33 @@
 <template>
     <header class="header">
-        header
+        <span href="/">Store</span>
+        <Nav />
     </header>
 </template>
 
 <script>
+import Nav from './Nav'
+
 export default {
-    name: 'Header'
+    name: 'Header',
+    components: { Nav }
 }
 </script>
 
 <style>
     .header {
         grid-area: header;
-        position: fixed;
         display: flex;
         align-items: center;
-        justify-content: center;
-        height: 100px;
-        border-bottom: solid 1px black;
-        width: 100vw;
+        justify-content: space-between;
+        padding: 0 10%;
+        border-bottom: solid 1px #BABABA;
+    }
+     
+    .header span {
+        text-decoration: none;
+        color: #2E2E2E;
+        font-weight: 600;
+        font-size: 1.5rem;
     }
 </style>
