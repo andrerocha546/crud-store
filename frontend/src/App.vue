@@ -34,7 +34,7 @@ body {
 
   height: 100vh;
   display: grid;
-  grid-template-rows: 80px 1fr 40px;
+  grid-template-rows: 80px 1fr auto;
   grid-template-columns: 300px 1fr;
   grid-template-areas:
     "header header"
