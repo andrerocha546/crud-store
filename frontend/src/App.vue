@@ -39,6 +39,6 @@ body {
   grid-template-areas:
     "header header"
     "menu content"
-    "menu footer";
+    "footer footer";
 }
 </style>
