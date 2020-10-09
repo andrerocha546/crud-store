@@ -8,6 +8,8 @@ exports.up = function(knex) {
         table.float('price', 2).notNull()
         table.decimal('discount')
         table.integer('quantity').notNull()
+        table.integer('categoryId').references('id')
+            .inTable('products_categories').notNull()
     })
   
 };
