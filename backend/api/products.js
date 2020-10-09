@@ -11,5 +11,11 @@ module.exports = app => {
             .catch(err => res.status(500).send(err))
     }
 
-    return { save }
+    const get = (req,res) => {
+        app.db('products')
+            .then(product => res.json(product))
+            .catch(err => res.status(500).send(err))
+    }
+
+    return { save, get }
 }
