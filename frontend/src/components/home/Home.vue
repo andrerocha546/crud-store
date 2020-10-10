@@ -32,4 +32,7 @@ export default {
 </script>
 
 <style>
+    .home {
+        display: flex;
+    }
 </style>
