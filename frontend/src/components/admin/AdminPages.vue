@@ -6,7 +6,10 @@
                     <b-tab title="Produtos" active>
                         <ProductAdmin />
                     </b-tab>
-                    <b-tab title="Usuários" active>
+                    <b-tab title="Categorias">
+                        <CategoryAdmin />
+                    </b-tab>
+                    <b-tab title="Usuários">
                         <UserAdmin />
                     </b-tab>
                 </b-tabs>
@@ -18,10 +21,11 @@
 <script>
 import ProductAdmin from './ProductAdmin'
 import UserAdmin from './UserAdmin'
+import CategoryAdmin from './CategoryAdmin'
 
 export default {
     name: 'AdminPages',
-    components: { ProductAdmin, UserAdmin }
+    components: { ProductAdmin, UserAdmin, CategoryAdmin }
 }
 </script>
 

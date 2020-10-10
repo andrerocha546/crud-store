@@ -20,7 +20,8 @@
             <b-form-checkbox id="user-admin"
                 v-model="user.admin">Administrador?</b-form-checkbox>
         </b-form>
-        <b-button variant='primary' @click="save">Salvar</b-button>
+        <b-button variant='primary' class="mt-2" 
+            @click="save">Salvar</b-button>
     </div>
 </template>
 

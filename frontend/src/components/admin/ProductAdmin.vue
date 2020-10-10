@@ -27,6 +27,7 @@
                 <b-form-select id="product-categoryId"
                     :options="categories" v-model="product.categoryId"></b-form-select>
             </b-form-group>
+
             <b-button variant="primary" 
                 @click="save">Salvar</b-button>
         </b-form>
@@ -41,17 +42,27 @@ export default {
     name: 'ProductAdmin',
     data: function() {
         return {
+            isVisible: false,
             product: {},
+            category: {},
             categories: [],
         }
     },
     methods: {
         save() {
-            axios.post(`${baseApiUrl}/products`, this.product)
-                .then(() => {
+            if(this.isVisible && this.category.name) {
+                axios.post(`${baseApiUrl}/categories`, this.category)
+                    .then(() => {
                     console.log('deu certo')
                 })
                 .catch(console.log('falhou'))
+            } else {
+                axios.post(`${baseApiUrl}/products`, this.product)
+                    .then(() => {
+                        console.log('deu certo')
+                    })
+                    .catch(console.log('falhou'))
+            }
         },
         loadCategories() {
             const url = `${baseApiUrl}/categories`
