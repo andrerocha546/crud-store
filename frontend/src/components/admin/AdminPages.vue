@@ -6,6 +6,9 @@
                     <b-tab title="Produtos" active>
                         <ProductAdmin />
                     </b-tab>
+                    <b-tab title="Usuários" active>
+                        <UserAdmin />
+                    </b-tab>
                 </b-tabs>
             </b-card>
         </div>
@@ -14,13 +17,17 @@
 
 <script>
 import ProductAdmin from './ProductAdmin'
+import UserAdmin from './UserAdmin'
 
 export default {
     name: 'AdminPages',
-    components: { ProductAdmin }
+    components: { ProductAdmin, UserAdmin }
 }
 </script>
 
 <style>
-
+    .admin-pages {
+        width: 80%;
+        margin: auto;
+    }
 </style>
