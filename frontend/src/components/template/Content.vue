@@ -1,10 +1,11 @@
 <template>
     <div class="content">
-        content
+        <router-view></router-view>
     </div>
 </template>
 
 <script>
+
 export default {
     name: 'Content'
 }
@@ -13,5 +14,6 @@ export default {
 <style>
     .content {
         grid-area: content;
+        display: flex;
     }
 </style>
