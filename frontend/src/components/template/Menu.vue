@@ -25,9 +25,14 @@ export default {
             categories: []
         }
     },
+    methods: {
+        getCategories() {
+            const url = `${baseApiUrl}/categories`
+            axios.get(url).then(res => this.categories = res.data)
+        }
+    },
     mounted() {
-        const url = `${baseApiUrl}/categories`
-        axios.get(url).then(res => this.categories = res.data)
+        this.getCategories()
     }
 }
 
