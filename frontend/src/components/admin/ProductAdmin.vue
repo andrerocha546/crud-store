@@ -27,7 +27,7 @@
                 <b-form-select id="product-categoryId"
                     :options="categories" v-model="product.categoryId"></b-form-select>
             </b-form-group>
-            <b-button variante="primary" 
+            <b-button variant="primary" 
                 @click="save">Salvar</b-button>
         </b-form>
     </div>
