@@ -27,7 +27,7 @@
 
 <script>
 import axios from 'axios'
-import { baseApiUrl } from '@/global'
+import { baseApiUrl, showError } from '@/global'
 
 export default {
     name: 'UserAdmin',
@@ -40,6 +40,10 @@ export default {
         save() {
             const url = `${baseApiUrl}/users`
             axios.post(url, this.user)
+                .then(() => {
+                    this.$toasted.global.defaultSuccess()
+                })
+                .catch(showError)
         }
     }
 }
