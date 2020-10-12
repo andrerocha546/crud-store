@@ -1,10 +1,17 @@
 const bodyParser = require("body-parser")
 
 module.exports = app => {
+    const { existsOrError } = app.api.validation
     
     const save = (req, res) => {
         const category = { ...req.body }
-
+        
+        try {
+            existsOrError(category.name, 'Nome não informado')
+        } catch(msg) {
+            res.status(400).send(msg)
+        }
+        
         app.db('products_categories')
             .insert(category)
             .then(_ => res.status(204).send())
