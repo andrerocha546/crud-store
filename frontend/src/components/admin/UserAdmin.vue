@@ -42,11 +42,15 @@ export default {
         }
     },
     methods: {
+        reset() {
+            this.user = {}
+        },
         save() {
             const url = `${baseApiUrl}/users`
             axios.post(url, this.user)
                 .then(() => {
                     this.$toasted.global.defaultSuccess()
+                    this.reset()
                 })
                 .catch(showError)
         }

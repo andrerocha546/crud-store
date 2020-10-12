@@ -40,11 +40,16 @@ export default {
                 })
             })
         },
+        reset() {
+            this.category = {}
+            this.loadCategories()
+        },
         save() {
             const url = `${baseApiUrl}/categories`
             axios.post(url, this.category)
                 .then(() => {
                     this.$toasted.global.defaultSuccess()
+                    this.reset()
                 })
                 .catch(showError)
         }

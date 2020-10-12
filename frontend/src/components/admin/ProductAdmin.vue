@@ -60,9 +60,14 @@ export default {
                 axios.post(`${baseApiUrl}/products`, this.product)
                     .then(() => {
                         this.$toasted.global.defaultSuccess()
+                        this.reset()
                     })
                     .catch(showError)
             }
+        },
+        reset() {
+            this.product = {}
+            this.loadCategories()
         },
         loadCategories() {
             const url = `${baseApiUrl}/categories`
