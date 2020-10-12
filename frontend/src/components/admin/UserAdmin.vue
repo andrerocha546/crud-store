@@ -17,6 +17,11 @@
                     v-model="user.password" required
                     placeholder="Informe a Senha do Usuário"></b-form-input>
             </b-form-group>
+            <b-form-group label="Confirmação de Senha:" label-for="user-confirm-password">
+                <b-form-input id="user-confirm-password" type="password"
+                    v-model="user.confirmPassword" required
+                    placeholder="Confirme a Senha do Usuário"></b-form-input>
+            </b-form-group>
             <b-form-checkbox id="user-admin"
                 v-model="user.admin">Administrador?</b-form-checkbox>
         </b-form>
