@@ -36,7 +36,7 @@
 
 <script>
 import axios from 'axios'
-import { baseApiUrl } from '@/global'
+import { baseApiUrl, showError } from '@/global'
 
 export default {
     name: 'ProductAdmin',
@@ -59,9 +59,9 @@ export default {
             } else {
                 axios.post(`${baseApiUrl}/products`, this.product)
                     .then(() => {
-                        console.log('deu certo')
+                        this.$toasted.global.defaultSuccess()
                     })
-                    .catch(console.log('falhou'))
+                    .catch(showError)
             }
         },
         loadCategories() {
