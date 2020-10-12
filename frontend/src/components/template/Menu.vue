@@ -42,11 +42,10 @@ export default {
 <style>
     .menu {
         grid-area: menu;
-        display: flex;
-        flex-direction: column;
-        flex-wrap: wrap;
+        position: fixed;
+        top: 50%;
+        transform: translateY(-50%);
         padding-left: 40px;
-        justify-content: center;
     }
 
     .menu ul {
