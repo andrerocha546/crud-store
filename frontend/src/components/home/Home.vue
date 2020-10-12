@@ -34,5 +34,6 @@ export default {
 <style>
     .home {
         display: flex;
+        flex-wrap: wrap; 
     }
 </style>
