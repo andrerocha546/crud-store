@@ -1,9 +1,21 @@
 const bodyParser = require("body-parser")
 
 module.exports = app => {
+    const { existsOrError } = app.api.validation
 
     const save = async (req, res) => {
         const product = { ...req.body }
+
+        try {
+            existsOrError(product.title, 'Titúlo do não informado')
+            existsOrError(product.description, 'Descrição não informada')
+            existsOrError(product.imageUrl, 'Imagem não informada')
+            existsOrError(product.price, 'Preço não informado')
+            existsOrError(product.quantity, 'Quantidade não informada')
+            existsOrError(product.categoryId, 'Categoria não informada')
+        } catch(msg) {
+            res.status(400).send(msg)
+        }
 
         app.db('products')
             .insert(product)
