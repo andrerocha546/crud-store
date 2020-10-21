@@ -18,5 +18,9 @@ module.exports = app => {
         if(valueA !== valueB) throw msg
     }
 
-    return { existsOrError, notExistsOrError, equalsOrError }
+    function validatesLength(value, msg) {
+        if(value.length < 5) throw msg
+    }
+
+    return { existsOrError, notExistsOrError, equalsOrError, validatesLength }
 }

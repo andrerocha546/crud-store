@@ -1,7 +1,7 @@
 const bcrypt = require('bcrypt-nodejs')
 
 module.exports = app => {
-    const { existsOrError, equalsOrError } = app.api.validation
+    const { existsOrError, equalsOrError, validatesLength } = app.api.validation
 
     const encryptPassword = password => {
         const salt = bcrypt.genSaltSync(10)
@@ -15,6 +15,8 @@ module.exports = app => {
             existsOrError(user.name, 'Nome não informado')
             existsOrError(user.email, 'E-mail não informado')
             existsOrError(user.password, 'Senha não informada')
+            validatesLength(user.password,
+                'A Senha tem que ter pelo menos 4 caracteres')
             equalsOrError(user.password, user.confirmPassword, 
                 'Senhas não conferem')
         } catch(msg) {
